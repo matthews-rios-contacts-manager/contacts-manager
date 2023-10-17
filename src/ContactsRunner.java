@@ -84,7 +84,7 @@ public class ContactsRunner {
                     if (contactExists) {
                         System.out.println("There's already a contact named " + formattedNames + ". Do you want to add the new contact anyway? (Y/N)");
                         String answer = input.getString();
-                        if (answer.equalsIgnoreCase("Y")) {
+                        if (answer.equalsIgnoreCase("n")) {
                             System.out.println("Contact not saved.");
                             break;
                         }
@@ -162,7 +162,7 @@ public class ContactsRunner {
                         }
                     }
                     //Create a new file if it does not exist.
-                    //Files.write(filePath, new byte[0], StandardOpenOption.TRUNCATE_EXISTING);
+                    Files.write(filePath, new byte[0], StandardOpenOption.TRUNCATE_EXISTING);
                     Files.write(filePath, newData, StandardOpenOption.APPEND);
                     break;
 
