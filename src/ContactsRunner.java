@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ContactsRunner {
@@ -117,7 +118,7 @@ public class ContactsRunner {
 
                     // Format the contact details in a tabular format
                     String formattedLine = String.format("%s | %s |", formattedName, formattedPhoneNumber);
-                    lines = Arrays.asList(formattedLine);
+                    lines = Collections.singletonList(formattedLine);
 
                     System.out.println("contact added");
                     System.out.println("You entered: " + formattedLine);
@@ -180,6 +181,3 @@ public class ContactsRunner {
     }
 
 }
-
-// TODO: Create exception for InputMismatchException if inserting the wrong name when searching.
-// TODO: Create exception for InputMismatchException if inserting the wrong character or string on the main menu.
