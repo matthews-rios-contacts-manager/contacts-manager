@@ -53,7 +53,7 @@ public class ContactsRunner {
                     System.out.println("**************************************");
                     System.out.println("          ~ View Contacts ~           ");
                     System.out.println("**************************************");
-                    System.out.printf("\n%-15s | %-12s |\n", "Name", "Phone number");
+                    System.out.printf("\n%-20s | %-12s |\n", "Name", "Phone number");
                     System.out.println("--------------------------------");
                     for (long i = 0; i < data.size(); i++) {
                         System.out.println(data.get((int) i));
@@ -110,7 +110,7 @@ public class ContactsRunner {
                     }
 
                     // Pad the name and phone number strings with spaces to align them under the headers
-                    long namePadding = 10 - formattedName.length();
+                    long namePadding = 20 - formattedName.length();
                     long phonePadding = 12 - formattedPhoneNumber.length();
                     formattedName += " ".repeat((int) Math.max(0, namePadding));
                     formattedPhoneNumber = " ".repeat((int) Math.max(0, phonePadding)) + formattedPhoneNumber;
@@ -161,8 +161,8 @@ public class ContactsRunner {
                             System.out.println("You deleted: " + name);
                         }
                     }
-
-                    Files.write(filePath, new byte[0], StandardOpenOption.TRUNCATE_EXISTING);  //Create a new file if it does not exist.
+                    //Create a new file if it does not exist.
+                    //Files.write(filePath, new byte[0], StandardOpenOption.TRUNCATE_EXISTING);
                     Files.write(filePath, newData, StandardOpenOption.APPEND);
                     break;
 

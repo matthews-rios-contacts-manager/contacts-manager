@@ -1,3 +1,5 @@
 
-KIM PORTER      | 210-123-4567 |
-John Smith      | 210-987-6543 |
+John Smith           | 210-987-6543 |
+Wade Rivera          | 567-463-5685 |
+Milianigia Rios      | 654-876-4534 |
+Jeremiah Matthews    | 754-892-6472 |
