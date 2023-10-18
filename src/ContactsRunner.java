@@ -165,8 +165,8 @@ public class ContactsRunner {
                         }
                     }
                     //Since the file already exists and is opened for WRITE access, the length is truncated to 0.
-                    //Since the file is opened for WRITE access the 1
-                    //bytes will be written to the end of the file rather than the beginning overall adding to the end of the file instead of overwriting.
+                    //Since the file is opened for WRITE access the bytes will be written to the end of the file rather than the beginning overall adding to the end of the file instead of overwriting.
+                    //
                     Files.write(filePath, new byte[0], StandardOpenOption.TRUNCATE_EXISTING);
                     Files.write(filePath, newData, StandardOpenOption.APPEND);
                     break;
