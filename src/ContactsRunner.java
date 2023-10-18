@@ -100,6 +100,8 @@ public class ContactsRunner {
                     String number = newContact.getNumber();
 
                     String formattedName = firstName + " " + lastName;
+
+                    //Empty variable initialized in order to display contact number.
                     String formattedPhoneNumber = null;
 
                     if(number.length() == 10) {
@@ -116,7 +118,7 @@ public class ContactsRunner {
                     formattedName += " ".repeat((int) Math.max(0, namePadding));
                     formattedPhoneNumber = " ".repeat((int) Math.max(0, phonePadding)) + formattedPhoneNumber;
 
-                    // Format the contact details in a tabular format
+                    // Format the contact details in a table format
                     String formattedLine = String.format("%s | %s |", formattedName, formattedPhoneNumber);
                     lines = Collections.singletonList(formattedLine);
 
@@ -162,7 +164,9 @@ public class ContactsRunner {
                             System.out.println("You deleted: " + name);
                         }
                     }
-                    //Create a new file if it does not exist.
+                    //Since the file already exists and is opened for WRITE access, the length is truncated to 0.
+                    //Since the file is opened for WRITE access the 1
+                    //bytes will be written to the end of the file rather than the beginning overall adding to the end of the file instead of overwriting.
                     Files.write(filePath, new byte[0], StandardOpenOption.TRUNCATE_EXISTING);
                     Files.write(filePath, newData, StandardOpenOption.APPEND);
                     break;
